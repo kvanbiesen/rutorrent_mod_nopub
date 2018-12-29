@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y git && \
     cp ./a/supervisord.conf /etc/supervisor/conf.d/ && \
     sed -i 's/\/var\/log/\/downloads\/\.log/g' /etc/nginx/nginx.conf
 
-EXPOSE 80 443 49160 49161 5000
+EXPOSE 80 443 49160 49161
 VOLUME /downloads
 
 CMD ["supervisord"]

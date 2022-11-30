@@ -8,17 +8,18 @@ RUN apt-get update && apt-get install -y git && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y rtorrent tar gzip unzip unrar mediainfo curl php-fpm php-cli nginx wget supervisor php-xml libarchive-zip-perl libjson-perl libxml-libxml-perl irssi sox python3 python-is-python3 python3-pip && \
     apt autoremove -y && \
     apt clean -y && \
-    python --version && \
     pip3 install cloudscraper cfscrape pyrosimple && \
     rm -rf /var/lib/apt/lists/* && \
     cp ./a/rutorrent-*.nginx /root/ && \
     mkdir -p /var/www && \
+    mkdir -p /root/.config/pyrosimple && \
     wget --no-check-certificate https://github.com/Novik/ruTorrent/archive/refs/tags/v4.0-beta3.zip && \
     unzip v4.0-beta3.zip && \
     mv ruTorrent-4.0-beta3 /var/www/rutorrent && \
     rm v4.0-beta3.zip && \
     cp ./a/config.php /var/www/rutorrent/conf/ && \
     cp ./a/startup-rtorrent.sh ./a/startup-nginx.sh ./a/startup-php.sh ./a/startup-irssi.sh ./a/.rtorrent.rc /root/ && \
+    cp ./a/config.toml /root/.config/pyrosimple/ && \
     cp ./a/rpc-rtcheck.py /usr/bin/rpc-rtcheck.py && \
     cp ./a/rtcheck /usr/bin/rtcheck && \
     chmod +x /usr/bin/rtcheck && \

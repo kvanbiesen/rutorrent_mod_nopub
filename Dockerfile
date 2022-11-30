@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y git && \
     git clone https://github.com/kvanbiesen/rtorrent-rutorrent-shared.git a && \
     cp ./a/extra.list /etc/apt/sources.list.d/extra.list && \
     apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y rtorrent tar gzip unzip unrar mediainfo curl php-fpm php-cli nginx wget ffmpeg supervisor php-xml libarchive-zip-perl libjson-perl libxml-libxml-perl irssi sox python python-pip && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y rtorrent tar gzip unzip unrar mediainfo curl php-fpm php-cli nginx wget ffmpeg supervisor php-xml libarchive-zip-perl libjson-perl libxml-libxml-perl irssi sox python-pip && \
     source .bash_profile && \
     python --version && \
     pip install cloudscraper cfscrape pyrosimple && \

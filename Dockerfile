@@ -13,10 +13,10 @@ RUN apt-get update && apt-get install -y git && \
     rm -rf /var/lib/apt/lists/* && \
     cp ./a/rutorrent-*.nginx /root/ && \
     mkdir -p /var/www && \
-    wget --no-check-certificate https://github.com/Novik/ruTorrent/archive/v3.9.tar.gz && \
-    tar xzf v3.9.tar.gz && \
-    mv ruTorrent-3.9 /var/www/rutorrent && \
-    rm v3.9.tar.gz && \
+    wget --no-check-certificate https://github.com/Novik/ruTorrent/archive/refs/tags/v4.0-beta3.zip && \
+    unzip v4.0-beta3.zip && \
+    mv ruTorrent-4.0-beta3 /var/www/rutorrent && \
+    rm v4.0-beta3.zip && \
     cp ./a/config.php /var/www/rutorrent/conf/ && \
     cp ./a/startup-rtorrent.sh ./a/startup-nginx.sh ./a/startup-php.sh ./a/startup-irssi.sh ./a/.rtorrent.rc /root/ && \
     cp ./a/supervisord.conf /etc/supervisor/conf.d/ && \

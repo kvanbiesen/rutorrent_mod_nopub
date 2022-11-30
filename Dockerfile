@@ -19,6 +19,10 @@ RUN apt-get update && apt-get install -y git && \
     rm v4.0-beta3.zip && \
     cp ./a/config.php /var/www/rutorrent/conf/ && \
     cp ./a/startup-rtorrent.sh ./a/startup-nginx.sh ./a/startup-php.sh ./a/startup-irssi.sh ./a/.rtorrent.rc /root/ && \
+    cp ./a/rpc-rtcheck.py /usr/bin/rpc-rtcheck.py && \
+    cp ./a/rtcheck /usr/bin/rtcheck && \
+    chmod +x /usr/bin/rtcheck && \
+    chmod +x /usr/bin/rpc-rtcheck.py && \
     cp ./a/supervisord.conf /etc/supervisor/conf.d/ && \
     sed -i 's/\/var\/log/\/downloads\/\.log/g' /etc/nginx/nginx.conf
 

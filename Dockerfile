@@ -28,7 +28,7 @@ RUN apt-get update && apt-get install -y git && \
     chmod +x /usr/bin/rpc-rtcheck.py && \
     chmod +x /root/cleanru.sh && \
     chmod +x /root/startup.sh && \
-    crontab -l | { cat; echo "30 * * * * bash /downloads/cleanru.sh"; } | crontab - && \
+    crontab -l | { cat; echo "30 * * * *  /usr/bin/bash /downloads/cleanru.sh"; } | crontab - && \
     cp ./a/supervisord.conf /etc/supervisor/conf.d/ && \
     sed -i 's/\/var\/log/\/downloads\/\.log/g' /etc/nginx/nginx.conf
 

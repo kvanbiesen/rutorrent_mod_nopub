@@ -36,4 +36,4 @@ EXPOSE 80 443 49160 49161
 VOLUME /downloads
 
 ENTRYPOINT ["/usr/bin/env"]
-CMD ["supervisord"]
+CMD ["/root/startup.sh"]

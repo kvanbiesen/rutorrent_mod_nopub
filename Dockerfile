@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y git && \
     git clone https://github.com/kvanbiesen/rtorrent-rutorrent-shared.git a && \
     cp ./a/extra.list /etc/apt/sources.list.d/extra.list && \
     apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y rtorrent tar gzip unzip nano cron unrar mkvtoolnix mediainfo curl php-fpm php-cli python2-minimal nginx wget supervisor php-xml libarchive-zip-perl libjson-perl libxml-libxml-perl irssi sox python3 python-is-python3 python3-pip && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y tar gzip unzip nano cron unrar mkvtoolnix mediainfo curl php-fpm php-cli python2-minimal nginx wget supervisor php-xml libarchive-zip-perl libjson-perl libxml-libxml-perl irssi sox python3 python-is-python3 python3-pip && \
     apt autoremove -y && \
     apt clean -y && \
     pip3 install cloudscraper cfscrape pyrosimple && \
@@ -17,6 +17,10 @@ RUN apt-get update && apt-get install -y git && \
     unzip v4.0-beta3.zip && \
     mv ruTorrent-4.0-beta3 /var/www/rutorrent && \
     rm v4.0-beta3.zip && \
+    cp ./a/*.deb /root/ && \
+    dpkg -i /root/libtorrent20_0.13.7-1build1_amd64.deb && \
+    dpkg -i /root/rtorrent_0.9.7-1build1_amd64.deb && \
+    rm -r /root/*.deb && \ 
     cp ./a/config.php /var/www/rutorrent/conf/ && \
     cp ./a/startup-rtorrent.sh ./a/startup-nginx.sh ./a/startup-php.sh ./a/startup-irssi.sh ./a/.rtorrent.rc /root/ && \
     cp ./a/config.toml /root/.config/pyrosimple/ && \
